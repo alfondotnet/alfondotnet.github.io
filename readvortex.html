@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadVortex - Save Articles for Later</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: -0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .content {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .feature p {
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        .cta {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .feature {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="readVortex_icon.png" alt="ReadVortex" style="width: 80px; height: 80px; margin-bottom: 1rem;">
+            <h1 class="logo">ReadVortex</h1>
+            <p class="tagline">Save articles for later reading</p>
+        </div>
+
+        <div class="content">
+            <p class="description">
+                ReadVortex is the perfect companion for avid readers who want to save interesting articles, blog posts, and web content for later reading. Build your personal reading library and never lose track of great content again.
+            </p>
+
+            <div class="features">
+                <div class="feature">
+                    <h3>📚 Save Anywhere</h3>
+                    <p>Quickly save articles from any website with our browser extension or mobile app. One click and it's in your reading list.</p>
+                </div>
+
+                <div class="feature">
+                    <h3>🌙 Distraction-Free Reading</h3>
+                    <p>Enjoy a clean, focused reading experience with our optimized reader mode. Dark mode and custom fonts included.</p>
+                </div>
+
+                <div class="feature">
+                    <h3>☁️ Sync Everywhere</h3>
+                    <p>Your reading list syncs across all your devices. Start reading on your phone, continue on your tablet or computer.</p>
+                </div>
+
+                <div class="feature">
+                    <h3>🏷️ Organize & Search</h3>
+                    <p>Tag your articles, create collections, and find content quickly with powerful search and filtering options.</p>
+                </div>
+
+                <div class="feature">
+                    <h3>📖 Offline Reading</h3>
+                    <p>Download articles for offline reading. Perfect for commutes, flights, or anywhere without internet.</p>
+                </div>
+
+                <div class="feature">
+                    <h3>📈 Reading Stats</h3>
+                    <p>Track your reading habits with insights about your reading time, favorite topics, and progress.</p>
+                </div>
+            </div>
+
+            <div class="cta">
+                <a href="#" class="download-btn">Coming Soon</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="/">← Back to Alfonapps</a>
+            <a href="/privacy.html">Privacy Policy</a>
+        </div>
+    </div>
+</body>
+</html>
