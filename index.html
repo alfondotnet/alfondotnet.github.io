@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alfonapps</title>
+    <title>Alfonapps — Building apps you love</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -21,38 +21,7 @@
             color: white;
         }
 
-        .logo {
-            font-family: 'Orbitron', monospace;
-            font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.5rem;
-            text-align: left;
-            position: fixed;
-            bottom: 9.5rem;
-            left: 2rem;
-            text-decoration: none;
-            color: white;
-        }
-
-        .subtext {
-            font-size: 0.9rem;
-            font-weight: 400;
-            opacity: 0.7;
-            position: fixed;
-            bottom: 9.4rem;
-            left: 2rem;
-        }
-
-        .contact {
-            font-size: 1.2rem;
-            font-weight: 400;
-            opacity: 0.8;
-            position: fixed;
-            bottom: 8rem;
-            left: 2rem;
-        }
-
+        /* ---- Grass ---- */
         .grass {
             position: fixed;
             bottom: 0;
@@ -60,7 +29,7 @@
             width: 100%;
             height: 80px;
             background: linear-gradient(to top, #1a3009 0%, #2d5016 30%, #4a7c29 70%, #6ba644 100%);
-            z-index: -1;
+            z-index: 1;
         }
 
         .grass::before {
@@ -73,20 +42,13 @@
             background: 
                 repeating-linear-gradient(
                     89deg,
-                    transparent 0px,
-                    transparent 8px,
-                    #7db747 8px,
-                    #7db747 12px,
-                    #8bc34a 12px,
-                    #8bc34a 15px,
-                    transparent 15px,
-                    transparent 25px,
-                    #6ba644 25px,
-                    #6ba644 30px,
-                    #7db747 30px,
-                    #7db747 32px,
-                    transparent 32px,
-                    transparent 40px
+                    transparent 0px, transparent 8px,
+                    #7db747 8px, #7db747 12px,
+                    #8bc34a 12px, #8bc34a 15px,
+                    transparent 15px, transparent 25px,
+                    #6ba644 25px, #6ba644 30px,
+                    #7db747 30px, #7db747 32px,
+                    transparent 32px, transparent 40px
                 );
             opacity: 0.9;
         }
@@ -101,29 +63,24 @@
             background: 
                 repeating-linear-gradient(
                     91deg,
-                    transparent 0px,
-                    transparent 12px,
-                    #9ccc65 12px,
-                    #9ccc65 16px,
-                    #8bc34a 16px,
-                    #8bc34a 20px,
-                    transparent 20px,
-                    transparent 35px,
-                    #7db747 35px,
-                    #7db747 38px,
-                    transparent 38px,
-                    transparent 50px
+                    transparent 0px, transparent 12px,
+                    #9ccc65 12px, #9ccc65 16px,
+                    #8bc34a 16px, #8bc34a 20px,
+                    transparent 20px, transparent 35px,
+                    #7db747 35px, #7db747 38px,
+                    transparent 38px, transparent 50px
                 );
             opacity: 0.6;
         }
 
+        /* ---- Cabin ---- */
         .cabin {
             position: fixed;
             bottom: 80px;
             left: 0.5rem;
             width: 400px;
             height: 180px;
-            z-index: -1;
+            z-index: 2;
         }
 
         .cabin-base {
@@ -207,6 +164,7 @@
                 inset 0 0 10px rgba(255,255,255,0.2);
         }
 
+        /* ---- Floating ReadVortex icon ---- */
         .floating-icon {
             position: fixed;
             bottom: 80px;
@@ -224,65 +182,157 @@
         }
 
         @keyframes jumpSideways {
-            0%, 100% {
-                transform: translateY(0px) translateX(0px) rotate(0deg);
-            }
-            25% {
-                transform: translateY(-30px) translateX(40px) rotate(15deg);
-            }
-            50% {
-                transform: translateY(0px) translateX(80px) rotate(0deg);
-            }
-            75% {
-                transform: translateY(-20px) translateX(40px) rotate(-10deg);
-            }
+            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            25% { transform: translateY(-30px) translateX(40px) rotate(15deg); }
+            50% { transform: translateY(0px) translateX(80px) rotate(0deg); }
+            75% { transform: translateY(-20px) translateX(40px) rotate(-10deg); }
         }
 
+        /* ---- Branding block (bottom-left) ---- */
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            position: fixed;
+            bottom: 10.5rem;
+            left: 2rem;
+            text-decoration: none;
+            color: white;
+            z-index: 5;
+        }
+
+        .subtext {
+            font-size: 0.9rem;
+            font-weight: 400;
+            opacity: 0.7;
+            position: fixed;
+            bottom: 10rem;
+            left: 2rem;
+            z-index: 5;
+        }
+
+        .contact {
+            font-size: 1.1rem;
+            font-weight: 400;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 8.5rem;
+            left: 2rem;
+            z-index: 5;
+        }
+
+        .contact a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+        }
+
+        .contact a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* ---- Project pills (top-right) ---- */
+        .project-pills {
+            position: fixed;
+            top: 1.5rem;
+            right: 2rem;
+            display: flex;
+            gap: 0.75rem;
+            z-index: 20;
+        }
+
+        .pill {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.1rem;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 100px;
+            text-decoration: none;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.25s ease;
+        }
+
+        .pill:hover {
+            background: rgba(255, 255, 255, 0.22);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        .pill img {
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+        }
+
+        .pill-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .pill-dot.purple {
+            background: #c084fc;
+            box-shadow: 0 0 6px #c084fc;
+        }
+
+        /* ---- Mobile ---- */
         @media (max-width: 768px) {
             .logo {
                 font-size: 1.8rem;
-                bottom: 7rem;
+                bottom: 8rem;
                 left: 1rem;
             }
             
             .subtext {
                 font-size: 0.8rem;
-                bottom: 6.8rem;
+                bottom: 7.6rem;
                 left: 1rem;
             }
             
             .contact {
-                font-size: 1rem;
-                bottom: 5.5rem;
+                font-size: 0.95rem;
+                bottom: 6.2rem;
                 left: 1rem;
             }
             
             .floating-icon {
-                width: 135px;
-                height: 135px;
+                width: 120px;
+                height: 120px;
                 top: 50%;
                 left: 50%;
+                bottom: auto;
                 transform: translate(-50%, -50%);
                 animation: jumpSidewaysMobile 3s ease-in-out infinite;
             }
             
             @keyframes jumpSidewaysMobile {
-                0%, 100% {
-                    transform: translate(-50%, -50%) translateY(0px) rotate(0deg);
-                }
-                33% {
-                    transform: translate(-20%, -50%) translateY(-20px) rotate(10deg);
-                }
-                66% {
-                    transform: translate(-80%, -50%) translateY(0px) rotate(0deg);
-                }
+                0%, 100% { transform: translate(-50%, -50%) translateY(0px) rotate(0deg); }
+                33% { transform: translate(-20%, -50%) translateY(-20px) rotate(10deg); }
+                66% { transform: translate(-80%, -50%) translateY(0px) rotate(0deg); }
             }
-            
             
             .cabin {
                 width: 280px;
                 height: 140px;
                 left: 0.3rem;
+            }
+
+            .project-pills {
+                top: auto;
+                bottom: 14rem;
+                right: auto;
+                left: 1rem;
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
     </style>
@@ -295,12 +345,28 @@
         <div class="cabin-door"></div>
         <div class="cabin-windows"></div>
     </div>
+
     <a href="readvortex.html" class="floating-icon">
         <img src="readVortex_icon.png" alt="ReadVortex" style="width: 100%; height: 100%; object-fit: contain;">
     </a>
+
+    <!-- Project pills -->
+    <div class="project-pills">
+        <a href="readvortex.html" class="pill">
+            <img src="readVortex_icon.png" alt="ReadVortex">
+            ReadVortex
+        </a>
+        <a href="nowax.html" class="pill">
+            <span class="pill-dot purple"></span>
+            NoWax US
+        </a>
+    </div>
+
     <div class="logo">Alfonapps.</div>
-    <div class="subtext">Building apps you love</div>
-    <div class="contact">hello@alfon.net</div>
+    <div class="subtext">Building apps &amp; products you love</div>
+    <div class="contact">
+        <a href="mailto:hello@alfon.net">hello@alfon.net</a>
+    </div>
 
     <script>
         document.addEventListener('mousemove', (e) => {

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoWax — Official US Distributor | Surf Wax Scraper</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            min-height: 100vh;
+            background: #0c0c1a;
+            color: white;
+        }
+
+        /* ---- Hero ---- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+            background: 
+                radial-gradient(ellipse at 50% 0%, rgba(168, 85, 247, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                #0c0c1a;
+        }
+
+        /* Animated wave decoration */
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 200%;
+            height: 80px;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,60 C200,120 400,0 600,60 C800,120 1000,0 1200,60 L1200,120 L0,120 Z' fill='%230c0c1a'/%3E%3C/svg%3E") repeat-x;
+            background-size: 600px 80px;
+            animation: waveScroll 8s linear infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes waveScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-600px); }
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(168, 85, 247, 0.15);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #c084fc;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #c084fc, #a855f7, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            color: #a1a1aa;
+            max-width: 540px;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #a855f7, #7c3aed);
+            color: white;
+            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(168, 85, 247, 0.45);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.06);
+            color: #e4e4e7;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ---- Product Section ---- */
+        .product-section {
+            padding: 6rem 2rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .product-image {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.08), rgba(99, 102, 241, 0.05));
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 24px;
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1;
+        }
+
+        .product-image .placeholder-icon {
+            font-size: 6rem;
+            opacity: 0.9;
+        }
+
+        .product-info h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .product-info p {
+            color: #a1a1aa;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .features-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #d4d4d8;
+            font-size: 0.95rem;
+        }
+
+        .features-list li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #a855f7;
+            flex-shrink: 0;
+        }
+
+        /* ---- Wholesale section ---- */
+        .wholesale {
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .wholesale-card {
+            max-width: 640px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 3rem;
+        }
+
+        .wholesale-card h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .wholesale-card p {
+            color: #a1a1aa;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .wholesale-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #c084fc;
+            font-size: 1.15rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .wholesale-email:hover {
+            color: #e9d5ff;
+        }
+
+        /* ---- Footer ---- */
+        .footer {
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer a {
+            color: #71717a;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: #fafafa;
+        }
+
+        /* ---- Mobile ---- */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 5rem 1.25rem 4rem;
+            }
+
+            .product-section {
+                padding: 4rem 1.25rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .product-image {
+                padding: 2rem;
+            }
+
+            .wholesale {
+                padding: 3rem 1.25rem;
+            }
+
+            .wholesale-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="badge">Official US Distributor</div>
+        <h1>Meet <span>NoWax</span></h1>
+        <p class="hero-sub">
+            The surf wax scraper that keeps your board clean, fast, and ready to ride. 
+            No chemicals, no mess — just a clean board in seconds.
+        </p>
+        <div class="hero-actions">
+            <a href="https://www.amazon.com/NOWAX-Remover-Surfboard-Cleaning-Storage/dp/B0DYFPYF68?crid=3DI6P63JF6R8J&dib=eyJ2IjoiMSJ9.bS0zN5FsnM4oI0YuvYMy2CbPV2QHLl2VM7oGc_WYOcI3Jg0-WRXfGdSv4-gotPpw8xJlWzdUGGNMPofRyf8wbwlprpSfyu-3yxX0PUKaz0RpZB5alxb0oin6FDZFYQ8wr4l7t4q_BqCGngx3PNONpUFDy7vXdq0NHcyy9cF7kP0rnUmy7EbsVI27O_iCCfDuOX-VPkni9nT8LUPOCoiUvWXp7I1tyFY2kZHXyiUQzYE.mX3ggs27rClp-B6lA6BYP0yKiaNtfXMwtNuweylkKBg&dib_tag=se&keywords=nowax&qid=1770481910&sprefix=nowa%2Caps%2C200&sr=8-1" target="_blank" rel="noopener" class="btn btn-primary">
+                Buy on Amazon
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+            </a>
+            <a href="mailto:usa@surfnowax.com" class="btn btn-secondary">
+                Wholesale Inquiries
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Product Details -->
+    <section class="product-section">
+        <div class="product-grid">
+            <div class="product-image">
+                <div class="placeholder-icon">🏄‍♂️</div>
+            </div>
+            <div class="product-info">
+                <h2>Clean board. Better session.</h2>
+                <p>
+                    NoWax is the fast, eco-friendly way to remove old wax from your surfboard. 
+                    Designed by surfers, for surfers — it works on any board shape and wax type.
+                </p>
+                <ul class="features-list">
+                    <li>Removes wax in seconds — no heat gun or chemicals needed</li>
+                    <li>Ergonomic design fits comfortably in your hand</li>
+                    <li>Works on shortboards, longboards, and everything in between</li>
+                    <li>Compact and durable — toss it in your board bag</li>
+                    <li>Eco-friendly: no solvents, no waste</li>
+                </ul>
+                <a href="https://www.amazon.com/NOWAX-Remover-Surfboard-Cleaning-Storage/dp/B0DYFPYF68?crid=3DI6P63JF6R8J&dib=eyJ2IjoiMSJ9.bS0zN5FsnM4oI0YuvYMy2CbPV2QHLl2VM7oGc_WYOcI3Jg0-WRXfGdSv4-gotPpw8xJlWzdUGGNMPofRyf8wbwlprpSfyu-3yxX0PUKaz0RpZB5alxb0oin6FDZFYQ8wr4l7t4q_BqCGngx3PNONpUFDy7vXdq0NHcyy9cF7kP0rnUmy7EbsVI27O_iCCfDuOX-VPkni9nT8LUPOCoiUvWXp7I1tyFY2kZHXyiUQzYE.mX3ggs27rClp-B6lA6BYP0yKiaNtfXMwtNuweylkKBg&dib_tag=se&keywords=nowax&qid=1770481910&sprefix=nowa%2Caps%2C200&sr=8-1" target="_blank" rel="noopener" class="btn btn-primary">
+                    Get yours on Amazon
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wholesale -->
+    <section class="wholesale">
+        <div class="wholesale-card">
+            <h2>Wholesale &amp; Retail Partnerships</h2>
+            <p>
+                Interested in stocking NoWax at your surf shop or retail location? 
+                We'd love to work with you. Reach out for pricing and minimum order details.
+            </p>
+            <a href="mailto:usa@surfnowax.com" class="wholesale-email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+                usa@surfnowax.com
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+        <a href="index.html">&larr; Back to Alfonapps</a>
+        <a href="mailto:usa@surfnowax.com">usa@surfnowax.com</a>
+    </div>
+
+</body>
+</html>
