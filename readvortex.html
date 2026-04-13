@@ -4,197 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReadVortex - Save Articles for Later</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Hero */
+        .hero {
+            background: var(--ube-900);
+            color: var(--color-white);
+            padding: 0 2rem;
         }
 
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-        }
-
-        .container {
+        .hero-inner {
             max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 6rem 0;
+        }
+
+        .hero-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-feature);
+            margin: 0 auto 1.5rem;
+            box-shadow: var(--shadow-clay);
+        }
+
+        .hero-title { margin-bottom: 1rem; }
+
+        .hero-tagline {
+            color: var(--ube-300);
+            margin-bottom: 2rem;
+        }
+
+        .hero-body {
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* Features */
+        .features { padding: 6rem 2rem; }
+
+        .features-inner {
+            max-width: 1100px;
             margin: 0 auto;
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
+        .features-label {
+            color: var(--warm-silver);
+            margin-bottom: 0.75rem;
         }
 
-        .logo {
-            font-size: 3rem;
-            font-weight: 300;
-            letter-spacing: -0.05em;
-            margin-bottom: 1rem;
-        }
+        .features-title { margin-bottom: 3rem; }
 
-        .tagline {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            font-weight: 400;
-        }
-
-        .content {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .description {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .features {
+        .feat-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
         }
 
-        .feature {
-            background: rgba(255, 255, 255, 0.1);
+        .feat-card {
+            background: var(--color-white);
+            border: 1px solid var(--border-oat);
+            border-radius: var(--radius-feature);
+            box-shadow: var(--shadow-clay);
             padding: 2rem;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .feature h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
+        .feat-card:nth-child(even) { border-style: dashed; }
 
-        .feature p {
-            opacity: 0.8;
-            line-height: 1.5;
-        }
+        .feat-card h3 { margin-bottom: 0.75rem; }
+        .feat-card p { color: var(--warm-charcoal); }
 
-        .cta {
-            text-align: center;
-            margin: 3rem 0;
-        }
-
-        .download-btn {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .download-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .footer a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
+        /* CTA */
+        .cta-section {
+            background: var(--lemon-500);
+            color: var(--color-black);
+            border-radius: var(--radius-section);
             margin: 0 1rem;
+            padding: 5rem 2rem;
+            text-align: center;
         }
 
-        .footer a:hover {
-            color: white;
+        .cta-section h2 { margin-bottom: 1.5rem; }
+        .cta-section p {
+            color: var(--lemon-800);
+            max-width: 500px;
+            margin: 0 auto 2rem;
         }
 
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-            }
-            
-            .logo {
-                font-size: 2.5rem;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .feature {
-                padding: 1.5rem;
-            }
+        /* Responsive */
+        @media (max-width: 767px) {
+            .hero-inner { padding: 4rem 0; }
+            .features { padding: 4rem 1.25rem; }
+            .feat-grid { grid-template-columns: 1fr; }
+            .cta-section { margin: 0 0.5rem; padding: 4rem 1.25rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <img src="readVortex_icon.png" alt="ReadVortex" style="width: 80px; height: 80px; margin-bottom: 1rem;">
-            <h1 class="logo">ReadVortex</h1>
-            <p class="tagline">Save articles for later reading</p>
-        </div>
 
-        <div class="content">
-            <p class="description">
-                ReadVortex is the perfect companion for avid readers who want to save interesting articles, blog posts, and web content for later reading. Build your personal reading library and never lose track of great content again.
-            </p>
-
-            <div class="features">
-                <div class="feature">
-                    <h3>📚 Save Anywhere</h3>
-                    <p>Quickly save articles from any website with our browser extension or mobile app. One click and it's in your reading list.</p>
-                </div>
-
-                <div class="feature">
-                    <h3>🌙 Distraction-Free Reading</h3>
-                    <p>Enjoy a clean, focused reading experience with our optimized reader mode. Dark mode and custom fonts included.</p>
-                </div>
-
-                <div class="feature">
-                    <h3>☁️ Sync Everywhere</h3>
-                    <p>Your reading list syncs across all your devices. Start reading on your phone, continue on your tablet or computer.</p>
-                </div>
-
-                <div class="feature">
-                    <h3>🏷️ Organize & Search</h3>
-                    <p>Tag your articles, create collections, and find content quickly with powerful search and filtering options.</p>
-                </div>
-
-                <div class="feature">
-                    <h3>📖 Offline Reading</h3>
-                    <p>Download articles for offline reading. Perfect for commutes, flights, or anywhere without internet.</p>
-                </div>
-
-                <div class="feature">
-                    <h3>📈 Reading Stats</h3>
-                    <p>Track your reading habits with insights about your reading time, favorite topics, and progress.</p>
-                </div>
-            </div>
-
-            <div class="cta">
-                <a href="#" class="download-btn">Coming Soon</a>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">
+                alfon.net <span class="sep">/</span> ReadVortex
+            </a>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="privacy.html" class="nav-link">Privacy</a>
+                <span class="btn btn-pill" style="opacity: 0.6; cursor: default;">Coming Soon</span>
             </div>
         </div>
+    </nav>
 
-        <div class="footer">
-            <a href="index.html">← Back to alfon.net</a>
-            <a href="privacy.html">Privacy Policy</a>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <img src="readVortex_icon.png" alt="ReadVortex" class="hero-icon">
+            <h1 class="t-display-hero hero-title">ReadVortex</h1>
+            <p class="t-sub-heading hero-tagline">Save articles for later reading</p>
+            <p class="t-body hero-body">The perfect companion for avid readers who want to save interesting articles, blog posts, and web content for later reading. Build your personal reading library and never lose track of great content again.</p>
+            <a href="#" class="btn btn-white btn-lg">Coming Soon</a>
         </div>
-    </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="features-inner">
+            <p class="t-uppercase-label features-label">Features</p>
+            <h2 class="t-section-heading features-title">Everything you need to read better</h2>
+            <div class="feat-grid">
+                <div class="feat-card">
+                    <h3 class="t-feature-title">Save Anywhere</h3>
+                    <p class="t-body-standard">Quickly save articles from any website with our browser extension or mobile app. One click and it's in your reading list.</p>
+                </div>
+                <div class="feat-card">
+                    <h3 class="t-feature-title">Distraction-Free Reading</h3>
+                    <p class="t-body-standard">Enjoy a clean, focused reading experience with our optimized reader mode. Dark mode and custom fonts included.</p>
+                </div>
+                <div class="feat-card">
+                    <h3 class="t-feature-title">Sync Everywhere</h3>
+                    <p class="t-body-standard">Your reading list syncs across all your devices. Start reading on your phone, continue on your tablet or computer.</p>
+                </div>
+                <div class="feat-card">
+                    <h3 class="t-feature-title">Organize & Search</h3>
+                    <p class="t-body-standard">Tag your articles, create collections, and find content quickly with powerful search and filtering options.</p>
+                </div>
+                <div class="feat-card">
+                    <h3 class="t-feature-title">Offline Reading</h3>
+                    <p class="t-body-standard">Download articles for offline reading. Perfect for commutes, flights, or anywhere without internet.</p>
+                </div>
+                <div class="feat-card">
+                    <h3 class="t-feature-title">Reading Stats</h3>
+                    <p class="t-body-standard">Track your reading habits with insights about your reading time, favorite topics, and progress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2 class="t-section-heading">Start reading smarter</h2>
+        <p class="t-body">ReadVortex is coming soon. Save articles, read offline, and never lose track of great content.</p>
+        <a href="#" class="btn btn-dark btn-lg">Coming Soon</a>
+    </section>
+
+    <footer class="footer">
+        <a href="index.html">&larr; alfon.net</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="copy">&copy; 2026 alfon.net</span>
+    </footer>
+
 </body>
 </html>

@@ -4,242 +4,200 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - ReadVortex</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            line-height: 1.6;
-            color: white;
-            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), #667eea 0%, #764ba2 50%, #1e3c72 100%);
-            transition: background 0.3s ease;
-            padding: 2rem;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-
-        .container {
+        .privacy {
             max-width: 800px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 3rem 2rem 0;
         }
 
-        .header {
+        .privacy-card {
+            background: var(--color-white);
+            border: 1px solid var(--border-oat);
+            border-radius: var(--radius-feature);
+            box-shadow: var(--shadow-clay);
+            padding: 3rem;
+        }
+
+        .privacy-header {
             text-align: center;
             margin-bottom: 3rem;
             padding-bottom: 2rem;
-            border-bottom: 2px solid #f0f0f0;
+            border-bottom: 1px dashed var(--border-oat);
         }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: white;
-            margin-bottom: 1rem;
+        .privacy-header h1 { margin-bottom: 0.75rem; }
+
+        .privacy-date {
+            color: var(--warm-silver);
         }
 
-        .effective-date {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 400;
-        }
-
-        h2 {
-            font-size: 1.4rem;
-            font-weight: 500;
-            color: white;
-            margin: 2rem 0 1rem 0;
+        .privacy-card h2 {
+            font-feature-settings: "ss01", "ss03", "ss10", "ss11", "ss12";
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.40;
+            letter-spacing: -0.4px;
+            margin: 2.5rem 0 1rem;
             padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid var(--border-oat-light);
         }
 
-        p {
+        .privacy-card p {
+            color: var(--warm-charcoal);
+            font-size: 1rem;
+            line-height: 1.60;
             margin-bottom: 1rem;
-            color: rgba(255, 255, 255, 0.9);
         }
 
-        ul {
-            margin: 1rem 0 1rem 2rem;
+        .privacy-card ul {
+            margin: 1rem 0 1rem 1.5rem;
+            color: var(--warm-charcoal);
         }
 
-        li {
+        .privacy-card li {
             margin-bottom: 0.5rem;
-            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            line-height: 1.60;
+        }
+
+        .privacy-card li strong {
+            color: var(--color-black);
+        }
+
+        .privacy-card ul ul {
+            margin-top: 0.5rem;
         }
 
         .divider {
             text-align: center;
             margin: 2rem 0;
-            color: rgba(255, 255, 255, 0.5);
+            color: var(--border-oat);
             font-weight: 300;
         }
 
-        .contact-info {
-            background: rgba(255, 255, 255, 0.1);
+        .contact-box {
+            background: var(--color-cream);
+            border: 1px dashed var(--border-oat);
+            border-radius: var(--radius-card);
             padding: 1.5rem;
-            border-radius: 8px;
             margin-top: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .contact-info h3 {
-            margin-bottom: 1rem;
-            color: white;
+        .contact-box p {
+            margin-bottom: 0.5rem;
+            color: var(--warm-charcoal);
         }
 
-        .footer {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
-        }
+        .contact-box p:last-child { margin-bottom: 0; }
 
-        .footer a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-
-        .footer a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-            }
-            
-            .container {
-                padding: 2rem 1.5rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
+        @media (max-width: 767px) {
+            .privacy { padding: 2rem 1.25rem 0; }
+            .privacy-card { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Privacy Policy</h1>
-            <p class="effective-date">Effective Date: January 1, 2025</p>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">
+                alfon.net <span class="sep">/</span> ReadVortex
+            </a>
+            <div class="nav-links">
+                <a href="readvortex.html" class="nav-link">ReadVortex</a>
+            </div>
         </div>
+    </nav>
 
-        <h2>1. Introduction</h2>
-        <p>Welcome to ReadVortex ("we," "our," or "us"). We respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your information when you use our app and website.</p>
-        <p>By using our services, you agree to the practices described in this Privacy Policy.</p>
+    <div class="privacy">
+        <div class="privacy-card">
+            <div class="privacy-header">
+                <h1 class="t-section-heading">Privacy Policy</h1>
+                <p class="t-caption privacy-date">Effective Date: January 1, 2025</p>
+            </div>
 
-        <div class="divider">⸻</div>
+            <h2>1. Introduction</h2>
+            <p>Welcome to ReadVortex ("we," "our," or "us"). We respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your information when you use our app and website.</p>
+            <p>By using our services, you agree to the practices described in this Privacy Policy.</p>
 
-        <h2>2. Information We Collect</h2>
-        <p>Depending on how you use our app, we may collect:</p>
-        <ul>
-            <li><strong>Account Information:</strong> Email address, username, or login credentials (if you create an account).</li>
-            <li><strong>Saved Content:</strong> Links, articles, or text you choose to save for later reading.</li>
-            <li><strong>Usage Data:</strong> Information on how you interact with the app (e.g., features used, time spent).</li>
-            <li><strong>Device Information:</strong> Browser type, operating system, IP address, and general location (non-identifiable).</li>
-            <li><strong>Purchases:</strong> Subscription and purchase history (via our partner RevenueCat) to enable premium features.</li>
-            <li><strong>Diagnostics:</strong> Crash logs, error reports, and performance data (via our partner Sentry) to improve app stability and performance.</li>
-        </ul>
-        <p>We do not collect sensitive personal data such as financial, health, or government ID information. Payment details (e.g., credit card numbers) are processed directly by Apple through the App Store and are never accessible to us.</p>
-
-        <div class="divider">⸻</div>
-
-        <h2>3. How We Use Your Information</h2>
-        <p>We use the information we collect to:</p>
-        <ul>
-            <li>Provide and improve our services.</li>
-            <li>Sync your saved items across devices.</li>
-            <li>Manage subscriptions and purchases (via RevenueCat).</li>
-            <li>Monitor crashes and app performance (via Sentry).</li>
-            <li>Communicate important updates or support messages.</li>
-            <li>Analyze trends and usage to improve functionality.</li>
-            <li>Ensure security and prevent abuse.</li>
-        </ul>
-        <p>We do not sell your personal information to third parties.</p>
-
-        <div class="divider">⸻</div>
-
-        <h2>4. Sharing Your Information</h2>
-        <p>We may share your information with:</p>
-        <ul>
-            <li><strong>Service Providers:</strong></li>
+            <h2>2. Information We Collect</h2>
+            <p>Depending on how you use our app, we may collect:</p>
             <ul>
-                <li>RevenueCat (to process subscriptions and purchases).</li>
-                <li>Sentry (to collect crash and performance diagnostics).</li>
-                <li>Other infrastructure providers (e.g., hosting, storage, analytics) to operate our services.</li>
+                <li><strong>Account Information:</strong> Email address, username, or login credentials (if you create an account).</li>
+                <li><strong>Saved Content:</strong> Links, articles, or text you choose to save for later reading.</li>
+                <li><strong>Usage Data:</strong> Information on how you interact with the app (e.g., features used, time spent).</li>
+                <li><strong>Device Information:</strong> Browser type, operating system, IP address, and general location (non-identifiable).</li>
+                <li><strong>Purchases:</strong> Subscription and purchase history (via our partner RevenueCat) to enable premium features.</li>
+                <li><strong>Diagnostics:</strong> Crash logs, error reports, and performance data (via our partner Sentry) to improve app stability and performance.</li>
             </ul>
-            <li><strong>Legal Requirements:</strong> If required by law, regulation, or valid legal process.</li>
-        </ul>
-        <p>We never sell or rent your data to advertisers.</p>
+            <p>We do not collect sensitive personal data such as financial, health, or government ID information. Payment details (e.g., credit card numbers) are processed directly by Apple through the App Store and are never accessible to us.</p>
 
-        <div class="divider">⸻</div>
+            <h2>3. How We Use Your Information</h2>
+            <p>We use the information we collect to:</p>
+            <ul>
+                <li>Provide and improve our services.</li>
+                <li>Sync your saved items across devices.</li>
+                <li>Manage subscriptions and purchases (via RevenueCat).</li>
+                <li>Monitor crashes and app performance (via Sentry).</li>
+                <li>Communicate important updates or support messages.</li>
+                <li>Analyze trends and usage to improve functionality.</li>
+                <li>Ensure security and prevent abuse.</li>
+            </ul>
+            <p>We do not sell your personal information to third parties.</p>
 
-        <h2>5. Cookies and Tracking</h2>
-        <p>Our website may use cookies or similar technologies to improve your browsing experience, store preferences, and analyze traffic. You can disable cookies in your browser settings, though some features may not work properly.</p>
+            <h2>4. Sharing Your Information</h2>
+            <p>We may share your information with:</p>
+            <ul>
+                <li><strong>Service Providers:</strong>
+                    <ul>
+                        <li>RevenueCat (to process subscriptions and purchases).</li>
+                        <li>Sentry (to collect crash and performance diagnostics).</li>
+                        <li>Other infrastructure providers (e.g., hosting, storage, analytics) to operate our services.</li>
+                    </ul>
+                </li>
+                <li><strong>Legal Requirements:</strong> If required by law, regulation, or valid legal process.</li>
+            </ul>
+            <p>We never sell or rent your data to advertisers.</p>
 
-        <div class="divider">⸻</div>
+            <h2>5. Cookies and Tracking</h2>
+            <p>Our website may use cookies or similar technologies to improve your browsing experience, store preferences, and analyze traffic. You can disable cookies in your browser settings, though some features may not work properly.</p>
 
-        <h2>6. Data Security</h2>
-        <p>We use reasonable technical and organizational measures (such as encryption, secure servers, and access controls) to protect your data. However, no online service is completely secure, and we cannot guarantee absolute protection.</p>
+            <h2>6. Data Security</h2>
+            <p>We use reasonable technical and organizational measures (such as encryption, secure servers, and access controls) to protect your data. However, no online service is completely secure, and we cannot guarantee absolute protection.</p>
 
-        <div class="divider">⸻</div>
+            <h2>7. Your Rights</h2>
+            <p>Depending on your location, you may have the right to:</p>
+            <ul>
+                <li>Access the personal information we hold about you.</li>
+                <li>Request correction or deletion of your data.</li>
+                <li>Opt-out of certain data processing (e.g., analytics).</li>
+                <li>Request data portability.</li>
+            </ul>
+            <p>To exercise these rights, contact us at hello@alfon.net.</p>
 
-        <h2>7. Your Rights</h2>
-        <p>Depending on your location, you may have the right to:</p>
-        <ul>
-            <li>Access the personal information we hold about you.</li>
-            <li>Request correction or deletion of your data.</li>
-            <li>Opt-out of certain data processing (e.g., analytics).</li>
-            <li>Request data portability.</li>
-        </ul>
-        <p>To exercise these rights, contact us at hello@alfon.net.</p>
+            <h2>8. Children's Privacy</h2>
+            <p>Our app is not directed to children under 13 (or 16 in some regions). We do not knowingly collect information from children. If you believe a child has provided us data, please contact us.</p>
 
-        <div class="divider">⸻</div>
+            <h2>9. Changes to this Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Any changes will be posted here with a revised "Effective Date."</p>
 
-        <h2>8. Children's Privacy</h2>
-        <p>Our app is not directed to children under 13 (or 16 in some regions). We do not knowingly collect information from children. If you believe a child has provided us data, please contact us.</p>
+            <h2>10. Contact Us</h2>
+            <p>If you have questions about this Privacy Policy, please contact us at:</p>
 
-        <div class="divider">⸻</div>
-
-        <h2>9. Changes to this Privacy Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Any changes will be posted here with a revised "Effective Date."</p>
-
-        <div class="divider">⸻</div>
-
-        <h2>10. Contact Us</h2>
-        <p>If you have questions about this Privacy Policy, please contact us at:</p>
-
-        <div class="contact-info">
-            <p>📧 hello@alfon.net</p>
-            <p>🌐 https://alfon.net</p>
-        </div>
-
-        <div class="footer">
-            <a href="index.html">← Back to alfon.net</a>
-            <a href="readvortex.html">ReadVortex</a>
+            <div class="contact-box">
+                <p>hello@alfon.net</p>
+                <p>https://alfon.net</p>
+            </div>
         </div>
     </div>
 
-    <script>
-        document.addEventListener('mousemove', (e) => {
-            const x = (e.clientX / window.innerWidth) * 100;
-            const y = (e.clientY / window.innerHeight) * 100;
-            document.body.style.setProperty('--x', x + '%');
-            document.body.style.setProperty('--y', y + '%');
-        });
-    </script>
+    <footer class="footer" style="margin-top: 2rem;">
+        <a href="index.html">&larr; alfon.net</a>
+        <a href="readvortex.html">ReadVortex</a>
+        <span class="copy">&copy; 2026 alfon.net</span>
+    </footer>
+
 </body>
 </html>
